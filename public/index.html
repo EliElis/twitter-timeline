@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Twitter user timeline</title>
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+	<script src="javascripts/script.js"></script>
+</head>
+
+<body ng-controller="myCtrl">
+	<form>
+		<label>Name: @</label>
+		<input type="text" ng-model="data.screen_name" placeholder="nodejs">
+		<input class="btn" type="submit" value="Get tweets" ng-click="submit()"> </form>
+	<div class="tweet-holder" ng-repeat="tw in tweetArr track by $index">
+		<p class="tweet-name">{{tw.name}}</p>
+		<p class="tweet-date">{{tw.created_at}}</p>
+		<p>{{tw.text}}</p>
+	</div>
+</body>
+
+</html>
