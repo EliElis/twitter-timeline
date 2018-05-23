@@ -5,7 +5,7 @@ app.controller('myCtrl', function ($scope, $http) {
 	$scope.submit = function () {
 		console.log('clicked submit');
 		$http({
-				url: 'http://localhost:3001/user'
+				url: '/user'
 				, method: 'POST'
 				, data: $scope.data
 			}).then(function (httpResponse) {
@@ -20,6 +20,8 @@ app.controller('myCtrl', function ($scope, $http) {
 					obj = {};
 				}
 				//console.log('response:', $scope.tweetArr);
+			}).catch(function (response) {
+				console.error(response);
 			})
 	}
 });
